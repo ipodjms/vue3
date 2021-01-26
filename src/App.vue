@@ -1,11 +1,10 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-    <headernav />
-    <router-view />
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <headernav />
+  <router-view />
 </template>
 
 <script>
-
 import headernav from "@/components/HeaderNav";
 
 export default {
@@ -13,7 +12,6 @@ export default {
     headernav
   }
 };
-
 </script>
 
 <style>
