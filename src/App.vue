@@ -1,14 +1,20 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <headernav />
     <router-view />
-
 </template>
 
+<script>
+
+import headernav from "@/components/HeaderNav";
+
+export default {
+  components: {
+    headernav
+  }
+};
+
+</script>
 
 <style>
 #app {

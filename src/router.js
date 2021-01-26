@@ -5,6 +5,7 @@ import home from './views/home.vue'
 const routerHistory = createWebHistory()
 
 const router = createRouter({
+  linkExactActiveClass: "vue-school-active-class",
   history: routerHistory,
   routes: [
     {
