@@ -7,11 +7,14 @@
           params: { slug: destination.id }
         }"
       >
-        {{ destination.name }} - {{destination.slug}}
+        {{ destination.name }} - {{ destination.slug }}
+
+        
+
       </router-link>
     </div>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>    
+    <router-link to="/about">About</router-link>
   </div>
 </template>
 
@@ -21,6 +24,13 @@ export default {
   setup() {
     const name = "joao";
     return { name }; // this line will solve your problem.
+  },
+  computed: {
+    currencydecimal() {
+      let value = "Fasdfsdf";
+      console.log(value);
+      return value;
+    }
   },
   data() {
     return {

@@ -6,4 +6,10 @@ const app = createApp(App);
 
 app.use(router);
 
+app.config.globalProperties.$filters = {
+    currencyUSD(value) {
+      return `${value}`;
+    }
+};
+
 app.mount("#app");

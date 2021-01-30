@@ -1,18 +1,22 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <Header />
   <headernav />
-  <router-view />
+  <router-view :key="$route.path" />
 </template>
 
 <script>
 import headernav from "@/components/HeaderNav";
+import Header from "@/components/Header";
 
 export default {
   components: {
-    headernav
+    headernav,
+    Header
   }
 };
 </script>
+
 
 <style>
 #app {
