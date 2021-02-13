@@ -20,7 +20,7 @@ export default {
     HelloWorld,
     Header,
     TimeLine,
-    Sidebar
+    SideBar
   }
 };
 </script>
