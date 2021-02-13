@@ -4,6 +4,7 @@
     <Header />
     <TimeLine />
     <SideBar />
+    <AddExpense />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import Header from "@/components/Header";
 import TimeLine from "@/components/TimeLine";
 import SideBar from "@/components/SideBar";
+import AddExpense from "@/components/AddExpense";
 
 export default {
   name: "home",
@@ -20,7 +22,8 @@ export default {
     HelloWorld,
     Header,
     TimeLine,
-    SideBar
+    SideBar,
+    AddExpense,
   }
 };
 </script>
