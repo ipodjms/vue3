@@ -1,23 +1,26 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />    
+    <HelloWorld msg="Welcome to Your Vue.js App" />
     <Header />
     <TimeLine />
+    <SideBar />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import Header from "@/components/Header"
-import TimeLine from "@/components/TimeLine"
+import Header from "@/components/Header";
+import TimeLine from "@/components/TimeLine";
+import SideBar from "@/components/SideBar";
 
 export default {
   name: "home",
   components: {
     HelloWorld,
     Header,
-    TimeLine
+    TimeLine,
+    Sidebar
   }
 };
 </script>

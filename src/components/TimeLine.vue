@@ -1,22 +1,9 @@
 <template>
   <div id="h">
     <h1>Timeline</h1>
-      <ul id="array-with-index">
-        <li :v-for="(item, index) in users">
-          {{ item }}
-        </li>
-      </ul>
 
     <div v-if="!loading">
       {{ users.length }}
-
-      
-
-      
-      <!-- {{ timeLine[1].id }}
-      {{ timeLine[2].id }}
-      {{ timeLine[3].id }}
-      {{ timeLine[4].id }} -->
 
       <table class="table">
         <thead>
@@ -32,7 +19,6 @@
         <!-- {{timeLine[0]}} -->
 
         <tbody>
-
           <Loop :items="this.timeLine" />
         </tbody>
       </table>
@@ -51,13 +37,13 @@
 </template>
 
 <script>
-import Loop from "@/components/Loop"
+import Loop from "@/components/Loop";
 
 const axios = require("axios");
 
 export default {
   name: "timeLine",
-    components: {
+  components: {
     Loop
   },
 
@@ -105,7 +91,6 @@ export default {
         console.log(response.data.content.length);
         // this.teste = response.data.content;
         this.timeLine = response.data.content;
-
       })
       .catch(error => {
         console.log(error);
@@ -113,8 +98,6 @@ export default {
         throw new Error(error);
       })
       .finally(() => (this.loading = false));
-  },
-
-  
+  }
 };
 </script>
