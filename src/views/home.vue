@@ -1,12 +1,31 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Header />
-    <TimeLine />
-    <SideBar />
-    <AddExpense />
+    <HelloWorld msg="Vue.js App" />
+    
+    <div class="row mt-8">
+      <div class="col">
+        <Header />
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-8">
+        <TimeLine />
+      </div>
+      <div class="col-4">
+        <SideBar />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <AddExpense />  
+      </div>
+      
+    </div>
+    
   </div>
 </template>
+
 
 <script>
 // @ is an alias to /src
@@ -17,7 +36,7 @@ import SideBar from "@/components/SideBar";
 import AddExpense from "@/components/AddExpense";
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
     HelloWorld,
     Header,

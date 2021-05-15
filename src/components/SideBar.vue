@@ -1,16 +1,16 @@
 <template>
   <div id="h">
-    <h1>SideBar</h1>
+    <h1>Resumo</h1>
 
-    <div v-if="!loading">
-      <div v-for="key in this.sideBarInfo" :key="key">
-        {{ key?.accountabilityStatus }}
-        Valor declarado: {{ key?.currency.code }} {{ key?.declared }} Valor
-        recebido: {{ key?.currency.code }} {{ key?.received }} Saldo: ({{
-          key?.declared - key?.received
-        }})
+    <div v-if="!loading" class="border border-success">
+      <div v-for="key in this.sideBarInfo" :key="key" class="mb-4 mt-4">
+        <b>{{ key?.accountabilityStatus }} </b> <br />
+        <b>Valor declarado:</b> {{ key?.currency.code }} {{ key?.declared }} <br />
+        <b>Valor recebido: </b> {{ key?.currency.code }} {{ key?.received }} <br />
+        <b>Saldo: </b> ({{ key?.declared - key?.received }})
       </div>
     </div>
+
     <section v-if="errored">
       <p>
         Pedimos desculpas, não estamos conseguindo recuperar as informações no
@@ -69,26 +69,6 @@ export default {
         throw new Error(error);
       })
       .finally(() => (this.loading = false));
-
-    axios
-      .post(
-        "https://api-front-end-challenge.buildstaging.com/api/expense/add",
-        {
-          expenseTypeCode: "hotel-fee",
-          currencyCode: "BRL",
-          amountSpent: 13.0,
-          amountTotal: 71.0,
-          notes: "Descrição da despesa",
-          resourceUrl: "",
-          cardDate: 1585710000000 // Timestamp da data
-        }
-      )
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
   }
 };
 </script>

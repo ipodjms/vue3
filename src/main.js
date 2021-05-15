@@ -25,3 +25,17 @@ app.config.globalProperties.$filters = {
 };
 
 app.mount("#app");
+
+router.beforeEach((to, from, next) => {
+  if (to.name === "about") {
+    var r = confirm("Essa página foi interceptada na guarda!");
+    if (r == true) {
+      next();
+    } else {
+      next({ name: "home", params: { slug: "home" } });
+    }
+  } else {
+    next();
+  }
+});
+

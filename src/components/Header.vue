@@ -1,9 +1,9 @@
 <template>
-  <div id="h">
+  <div id="h" class="mt-5 mb-5">
     <h1>Reembolso - {{ info?.id }}</h1>
     <div v-if="!loading">
-      <ul class="list-group">
-        <li class="list-group-item">Nome: {{ info?.collaborator.name }}</li>
+      <ul class="list-group text-left">
+        <li class="list-group-item active">Nome: {{ info?.collaborator.name }}</li>
         <li class="list-group-item">Email: {{ info?.collaborator.email }}</li>
         <li class="list-group-item">
           Justificativa: {{ info?.justification }}

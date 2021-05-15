@@ -1,57 +1,70 @@
 <template>
-  <div id="h">
-    <h1>Add Expense</h1>
+  <div id="h" class="form-group mt-4">
+    <h1>Adcionar Gasto</h1>
 
     <label for="">Tipo</label>
-    <div id="v-model-select-type" class="demo">
+    <div id="v-model-select-type" class="demo mb-2">
       <select v-model="expenseTypeCode">
         <option disabled value="">Please select one</option>
         <option>Hotel Fee</option>
         <option>Food</option>
         <option>Transport</option>
       </select>
-      <span>Selected: {{ expenseTypeCode }}</span>
     </div>
 
     <label for="">Moeda</label>
-    <div id="v-model-select-currency" class="demo">
+    <div id="v-model-select-currency" class="demo mb-4">
       <select v-model="currencyCode">
         <option disabled value="">Please select one</option>
         <option>BRL</option>
         <option>USD</option>
         <option>MXN</option>
       </select>
-      <span>Selected: {{ currencyCode }}</span>
     </div>
 
-    <div v-if="currencyCode !== '' ">
+    <div v-if="currencyCode !== ''" class="hold">
       <div>
         <label>Valor Total da nota / cupom</label>
-        <input type="number" v-model="amountTotal" name="" id="" />
+        <input
+          class="form-control mb-4"
+          type="number"
+          v-model="amountTotal"
+          name=""
+          id=""
+        />
       </div>
 
       <div>
         <label>Valor a ser considerado</label>
-        <input type="number" v-model="amountSpent" name="" id="" />
+        <input
+          class="form-control mb-4"
+          type="number"
+          v-model="amountSpent"
+          name=""
+          id=""
+        />
       </div>
     </div>
 
-    <label for="">Descrição</label>
-    <input v-model="notes" placeholder="edit me" />
+    <div class="hold">
+      <label for="">Descrição</label>
+      <input class="form-control mb-4" v-model="notes" placeholder="edit me" />
 
-    <label for="">Data</label>
-    <input v-model="date" type="date" />
+      <label for="">Data</label>
+      <input class="form-control mb-4" v-model="date" type="date" />
 
-    <label for="">File</label>
-    <input
-      type="file"
-      id="resourceUrl"
-      ref="resourceUrl"
-      v-on:change="handleFileUpload($event)"
-      accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"
-    />
+      <label for="">Selecionar compovante (pdf ou imagem - max 1MB)</label>  
+      <input
+        type="file"
+        id="resourceUrl"
+        ref="resourceUrl"
+        v-on:change="handleFileUpload($event)"
+        accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"
+        class="mb-4"
+      />
 
-    <button v-on:click="addExpenseData">Hello</button>
+      <button class="mb-4" v-on:click="addExpenseData">Adcionar gasto</button>
+    </div>
   </div>
 </template>
 
@@ -92,6 +105,7 @@ export default {
         )
         .then(function(response) {
           console.log(response);
+          alert('Gasto adcionado com sucesso')
         })
         .catch(function(error) {
           console.log(error);
@@ -111,3 +125,10 @@ export default {
   }
 };
 </script>
+
+<style>
+.hold  {
+  max-width: 400px;
+  margin: 0 auto;
+  }
+</style>

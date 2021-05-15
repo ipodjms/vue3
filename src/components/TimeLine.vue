@@ -1,12 +1,10 @@
 <template>
   <div id="h">
-    <h1>Timeline</h1>
+    <h1>Linha do tempo</h1>
 
     <div v-if="!loading">
-      {{ users.length }}
-
-      <table class="table">
-        <thead>
+      <table class="table table-striped">
+        <thead class="thead-dark">
           <tr>
             <th scope="col">Data</th>
             <th scope="col">Tipo</th>
@@ -15,8 +13,6 @@
             <th scope="col">Status</th>
           </tr>
         </thead>
-
-        <!-- {{timeLine[0]}} -->
 
         <tbody>
           <Loop :items="this.timeLine" />
