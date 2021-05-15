@@ -10,11 +10,13 @@ import headernav from "@/components/HeaderNav";
 
 
 export default {
+  
   components: {
     headernav
   }
 };
 
+document.title = "Vue by Jones";
 </script>
 
 <style>
